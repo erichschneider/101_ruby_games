@@ -1,10 +1,10 @@
 101 Ruby Games
 ==============
 
-This is a collection of Ruby ports of the BASIC program in David M. Ahl's
-classic book *101 BASIC Computer Games*. My aim is to replicate the original
+This is a collection of Ruby ports of the BASIC programs in David M. Ahl's
+classic book *101 BASIC Computer Games*. My aim is to replicate the 
 algorithms and output of the BASIC originals, but programmed in Ruby. So,
-you'll see that the input text is all uppercase and often formatted for a 
+you'll see that the output text is all uppercase and often formatted for a 
 40-column display, just like we had on our microcomputers in the '70s and '80s.
 When motivated to do so, I'll also refactor the games to make them more concise
 and understandable. The games are designed to be run from the command line,
