@@ -1,6 +1,9 @@
 Notes on Acey-Ducey
 -------------------
 
+Original source:
+http://www.atariarchives.org/basicgames/showpage.php?page=2
+
 I've never heard of a card game by this name, but I have heard of a
 backgammon variant named "Acey-Deucey", where the key differences are
 (a) that all pieces have to be "brought on" to the board instead of having 
