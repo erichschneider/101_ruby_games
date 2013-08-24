@@ -118,7 +118,43 @@ class Maze
           end
         end
       else   # can't go left
-            
+        if not at_top? and unseen_above?
+          if not at_right? and unseen_right?
+            if can_go_down?
+              case rand[3]
+              when 0
+                open_and_move_up()
+              when 1
+                open_and_move_right()
+              when 2
+                open_and_move_down()
+              end
+            else # can't go left or down
+              case rand[2]
+              when 0
+                open_and_move_up()
+              when 1
+                open_and_move_right()
+              end
+            end
+          else # can't go left or right
+            if can_go_down?
+              case rand(2)
+              when 0
+                open_and_move_up()
+              when 1
+                open_and_move_down()
+              end
+            else
+              open_and_move_up()
+            end
+          end
+        else  # can't go left or up
+          if not at_right? and unseen_right?
+            if can_go_down?
+              open_and_move_down()
+            else
+          
           
                 
               
