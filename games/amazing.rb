@@ -254,7 +254,7 @@ class Maze
       row.each { |cell| print "  " + (cell < 2 ? "I" : " ") }
       print "\n"
       row.each { |cell| print ":" + (cell % 2 == 0 ? "--" : "  ") }
-      print ".\n"
+      print ":\n"
     end
   end
 end
