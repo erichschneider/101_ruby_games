@@ -20,7 +20,7 @@ end
 
 done = false
 points = 0
-begin
+while not done
   digits = (0..9).map { |i| "#{i}" }
   num_str = (1..3).map {|i| digits.delete(digits[rand(digits.count)])}.join
 
@@ -63,7 +63,7 @@ begin
   printf "PLAY AGAIN (YES OR NO)? "
   again = gets.chomp.upcase
   done = true unless again == "YES"
-end
+end 
 if points > 0
   puts
   puts "A #{points} POINT BAGELS BUFF!!"
