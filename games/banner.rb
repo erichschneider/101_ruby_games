@@ -28,7 +28,7 @@ chardata = {
   'D' => [512, 258, 258, 258, 258, 131, 125],
   'E' => [512, 274, 274, 274, 274, 258, 258],
   'F' => [512, 18, 18, 18, 18, 2, 2],
-  'G' => [15,131,258,258,290,163,101],
+  'G' => [125,131,258,258,290,163,101],
   'H' => [512, 17, 17, 17, 17 , 17, 512],
   'I' => [258, 258, 258, 512, 258, 258, 258],
   'J' => [65, 129, 257, 257, 257, 129, 128],
@@ -77,7 +77,7 @@ statement.split("").each do |c|
     str_to_print = character == "ALL" ? c : character
     blank_str = " " * str_to_print.length
     chardata[c.upcase].each do |rowdata|
-      rowdata -= 1
+      rowdata -= 1 if rowdata != 0 
       horizontal.times do
         printf("%s",' '*((63-4.5*vertical)/(str_to_print.length+1))) if centered
         puts powers.map { |val| 
