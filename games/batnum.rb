@@ -1,5 +1,8 @@
 #!/usr/bin/env ruby
 
+# Battle of numbers game - take objects from a pile, try to be (or not be) last
+# Original author: John Kemeny, Darthmouth College
+
 def print_header()
   printf("%18sBATNUM\n", "")
   puts("CREATIVE COMPUTING  MORRISTOWN, NEW JERSEY")
