@@ -1,5 +1,23 @@
 #!/usr/bin/env ruby
 
+def print_header()
+  printf("%18sBATNUM\n", "")
+  puts("CREATIVE COMPUTING  MORRISTOWN, NEW JERSEY")
+  2.times { puts }
+  print <<EOM
+THIS PROGRAM IS A 'BATTLE OF NUMBERS'
+GAME, WHERE THE COMPUTER IS YOUR OPPONENT
+
+THE GAME STARTS WITH AN ASSUMED PILE OF OBJECTS.
+YOU AND YOUR OPPONENT ALTERNATELY REMOVE OBJECTS FROM
+THE PILE.  WINNING IS DEFINED IN ADVANCE AS TAKING THE
+LAST OBJECT OR NOT.  YOU CAN ALSO SPECIFY SOME OTHER
+BEGINNING CONDITIONS.  DON'T USE ZERO, HOWEVER, IN
+PLAYING THE GAME.
+
+EOM
+end
+
 class BatnumGame
   def initialize
     done = false
@@ -55,8 +73,7 @@ class BatnumGame
   end
 
   def computer_move
-    q = @n
-    q -= 1 unless @take_last
+    q = @n - (@take_last ? 0 : 1)
     if @take_last && @n <= @max
       @game_over = true
       puts "COMPUTER TAKES #{@n} AND WINS."
@@ -64,12 +81,7 @@ class BatnumGame
       @game_over = true
       puts "COMPUTER TAKES #{@n} AND LOSES."
     else
-      p = q - (@min+@max) * (q.to_f / (@min+@max)).to_i
-      if p < @min
-        p = @min
-      elsif p > @max
-        p = @max
-      end
+      p = [@min, q % (@min+@max), @max].sort[1]
       @n -= p
       puts "COMPUTER TAKES #{p} AND LEAVES #{@n}"
     end
@@ -101,6 +113,7 @@ class BatnumGame
   end
 end
 
+print_header()
 while true
   game = BatnumGame.new
   game.play
